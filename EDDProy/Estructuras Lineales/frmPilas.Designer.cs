@@ -29,22 +29,25 @@ namespace EDDemo
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtnum = new System.Windows.Forms.TextBox();
             this.btnPush = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnPop = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.list = new System.Windows.Forms.ListBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnVaciar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtnum
             // 
-            this.textBox1.Location = new System.Drawing.Point(60, 89);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(72, 27);
-            this.textBox1.TabIndex = 0;
+            this.txtnum.Location = new System.Drawing.Point(60, 89);
+            this.txtnum.Margin = new System.Windows.Forms.Padding(2);
+            this.txtnum.Multiline = true;
+            this.txtnum.Name = "txtnum";
+            this.txtnum.Size = new System.Drawing.Size(72, 27);
+            this.txtnum.TabIndex = 0;
             // 
             // btnPush
             // 
@@ -52,7 +55,7 @@ namespace EDDemo
             this.btnPush.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnPush.ForeColor = System.Drawing.SystemColors.Menu;
             this.btnPush.Location = new System.Drawing.Point(60, 130);
-            this.btnPush.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPush.Margin = new System.Windows.Forms.Padding(2);
             this.btnPush.Name = "btnPush";
             this.btnPush.Size = new System.Drawing.Size(42, 19);
             this.btnPush.TabIndex = 1;
@@ -60,19 +63,19 @@ namespace EDDemo
             this.btnPush.UseVisualStyleBackColor = false;
             this.btnPush.Click += new System.EventHandler(this.btnPush_Click);
             // 
-            // button1
+            // btnPop
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(43)))), ((int)(((byte)(48)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.ForeColor = System.Drawing.SystemColors.Menu;
-            this.button1.Location = new System.Drawing.Point(116, 130);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(42, 19);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Pop";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnPop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(43)))), ((int)(((byte)(48)))));
+            this.btnPop.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPop.ForeColor = System.Drawing.SystemColors.Menu;
+            this.btnPop.Location = new System.Drawing.Point(116, 130);
+            this.btnPop.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPop.Name = "btnPop";
+            this.btnPop.Size = new System.Drawing.Size(42, 19);
+            this.btnPop.TabIndex = 2;
+            this.btnPop.Text = "Pop";
+            this.btnPop.UseVisualStyleBackColor = false;
+            this.btnPop.Click += new System.EventHandler(this.button1_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -103,19 +106,56 @@ namespace EDDemo
             this.label2.TabIndex = 5;
             this.label2.Text = "Ingresa un numero: ";
             // 
+            // list
+            // 
+            this.list.FormattingEnabled = true;
+            this.list.Location = new System.Drawing.Point(300, 89);
+            this.list.Name = "list";
+            this.list.Size = new System.Drawing.Size(105, 121);
+            this.list.TabIndex = 6;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(43)))), ((int)(((byte)(48)))));
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBuscar.ForeColor = System.Drawing.SystemColors.Menu;
+            this.btnBuscar.Location = new System.Drawing.Point(180, 130);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(51, 19);
+            this.btnBuscar.TabIndex = 7;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            // 
+            // btnVaciar
+            // 
+            this.btnVaciar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(43)))), ((int)(((byte)(48)))));
+            this.btnVaciar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnVaciar.ForeColor = System.Drawing.SystemColors.Menu;
+            this.btnVaciar.Location = new System.Drawing.Point(326, 215);
+            this.btnVaciar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnVaciar.Name = "btnVaciar";
+            this.btnVaciar.Size = new System.Drawing.Size(51, 19);
+            this.btnVaciar.TabIndex = 8;
+            this.btnVaciar.Text = "Vaciar";
+            this.btnVaciar.UseVisualStyleBackColor = false;
+            // 
             // frmPilas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(443, 268);
+            this.Controls.Add(this.btnVaciar);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.list);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnPop);
             this.Controls.Add(this.btnPush);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtnum);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmPilas";
             this.Text = "frmPilas";
             this.ResumeLayout(false);
@@ -125,11 +165,14 @@ namespace EDDemo
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtnum;
         private System.Windows.Forms.Button btnPush;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnPop;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ListBox list;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btnVaciar;
     }
 }

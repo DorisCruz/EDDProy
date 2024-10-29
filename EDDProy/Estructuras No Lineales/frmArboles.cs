@@ -62,6 +62,7 @@ namespace EDDemo.Estructuras_No_Lineales
             LabelPre.Text = "";
             LabelIn.Text = "";
             LabelPost.Text = "";
+            txtNodos.Text = "";
         }
        
         private void frmArboles_Load(object sender, EventArgs e)

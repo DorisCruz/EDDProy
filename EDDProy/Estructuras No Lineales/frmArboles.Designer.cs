@@ -98,7 +98,7 @@ namespace EDDemo.Estructuras_No_Lineales
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.btnLimpiar.Location = new System.Drawing.Point(486, 172);
+            this.btnLimpiar.Location = new System.Drawing.Point(486, 184);
             this.btnLimpiar.Margin = new System.Windows.Forms.Padding(2);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(60, 25);
@@ -113,7 +113,7 @@ namespace EDDemo.Estructuras_No_Lineales
             this.btnRecorrer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRecorrer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRecorrer.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btnRecorrer.Location = new System.Drawing.Point(318, 106);
+            this.btnRecorrer.Location = new System.Drawing.Point(317, 106);
             this.btnRecorrer.Name = "btnRecorrer";
             this.btnRecorrer.Size = new System.Drawing.Size(65, 23);
             this.btnRecorrer.TabIndex = 3;
@@ -126,7 +126,7 @@ namespace EDDemo.Estructuras_No_Lineales
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(314, 132);
+            this.label1.Location = new System.Drawing.Point(313, 134);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 15);
             this.label1.TabIndex = 4;
@@ -137,7 +137,7 @@ namespace EDDemo.Estructuras_No_Lineales
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(315, 146);
+            this.label2.Location = new System.Drawing.Point(314, 148);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 15);
             this.label2.TabIndex = 5;
@@ -149,7 +149,7 @@ namespace EDDemo.Estructuras_No_Lineales
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label3.Location = new System.Drawing.Point(314, 159);
+            this.label3.Location = new System.Drawing.Point(313, 161);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(74, 15);
             this.label3.TabIndex = 6;
@@ -160,7 +160,7 @@ namespace EDDemo.Estructuras_No_Lineales
             this.LabelPre.AutoSize = true;
             this.LabelPre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelPre.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.LabelPre.Location = new System.Drawing.Point(375, 132);
+            this.LabelPre.Location = new System.Drawing.Point(374, 134);
             this.LabelPre.Name = "LabelPre";
             this.LabelPre.Size = new System.Drawing.Size(0, 15);
             this.LabelPre.TabIndex = 7;
@@ -170,7 +170,7 @@ namespace EDDemo.Estructuras_No_Lineales
             this.LabelIn.AutoSize = true;
             this.LabelIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelIn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.LabelIn.Location = new System.Drawing.Point(367, 146);
+            this.LabelIn.Location = new System.Drawing.Point(366, 148);
             this.LabelIn.Name = "LabelIn";
             this.LabelIn.Size = new System.Drawing.Size(0, 15);
             this.LabelIn.TabIndex = 8;
@@ -180,7 +180,7 @@ namespace EDDemo.Estructuras_No_Lineales
             this.LabelPost.AutoSize = true;
             this.LabelPost.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelPost.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.LabelPost.Location = new System.Drawing.Point(380, 159);
+            this.LabelPost.Location = new System.Drawing.Point(379, 161);
             this.LabelPost.Name = "LabelPost";
             this.LabelPost.Size = new System.Drawing.Size(0, 15);
             this.LabelPost.TabIndex = 9;
@@ -191,7 +191,7 @@ namespace EDDemo.Estructuras_No_Lineales
             this.btnRandom.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRandom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRandom.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btnRandom.Location = new System.Drawing.Point(129, 172);
+            this.btnRandom.Location = new System.Drawing.Point(129, 169);
             this.btnRandom.Name = "btnRandom";
             this.btnRandom.Size = new System.Drawing.Size(84, 23);
             this.btnRandom.TabIndex = 11;
@@ -203,7 +203,7 @@ namespace EDDemo.Estructuras_No_Lineales
             // 
             this.txtNodos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
             this.txtNodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNodos.Location = new System.Drawing.Point(67, 172);
+            this.txtNodos.Location = new System.Drawing.Point(67, 169);
             this.txtNodos.Name = "txtNodos";
             this.txtNodos.Size = new System.Drawing.Size(56, 21);
             this.txtNodos.TabIndex = 12;
@@ -224,7 +224,7 @@ namespace EDDemo.Estructuras_No_Lineales
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label5.Location = new System.Drawing.Point(64, 154);
+            this.label5.Location = new System.Drawing.Point(64, 151);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(171, 15);
             this.label5.TabIndex = 14;
