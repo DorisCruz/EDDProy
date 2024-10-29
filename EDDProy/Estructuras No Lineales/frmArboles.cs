@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EDDemo;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,11 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
+using System.Xml.Linq;
 
 namespace EDDemo.Estructuras_No_Lineales
 {
     public partial class frmArboles : Form
     {
+       
         ArbolBusqueda miArbol;
         NodoBinario miRaiz;
 
@@ -24,17 +28,24 @@ namespace EDDemo.Estructuras_No_Lineales
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
- 
-            //Obtenemos el nodo Raiz del arbol
+            if (!int.TryParse(txtDato.Text, out int nuevoDato))
+            {
+                MessageBox.Show("Por favor, ingresa un número válido.");
+                return;
+            }
             miRaiz = miArbol.RegresaRaiz();
 
-            //Limpiamos la cadena donde se concatenan los nodos del arbol 
+
+            if (miArbol.Busqueda(nuevoDato, miRaiz))
+            {
+                MessageBox.Show("El dato ya existe en el árbol.");
+                txtDato.Text = "";
+                return;
+            }
             miArbol.strArbol = "";
 
-            //Se inserta el nodo con el dato capturado
             miArbol.InsertaNodo(int.Parse(txtDato.Text), ref miRaiz);
 
-            //Leer arbol completo y mostrarlo en caja de texto
             miArbol.Muestra(1, miRaiz);
             txtArbol.Text = miArbol.strArbol;
             
@@ -46,8 +57,120 @@ namespace EDDemo.Estructuras_No_Lineales
             miArbol = null;
             miRaiz = null;
             miArbol = new ArbolBusqueda();
-            txtArbol.Text  = "";
+            txtArbol.Text = "";
+            txtDato.Text = "";
+            LabelPre.Text = "";
+            LabelIn.Text = "";
+            LabelPost.Text = "";
+        }
+       
+        private void frmArboles_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void btnRecorrer_Click_1(object sender, EventArgs e)
+        {
+            miRaiz = miArbol.RegresaRaiz();
+            miArbol.strRecorrido = "";
+
+            if (miRaiz == null)
+            {
+                LabelPre.Text = "El arbol esta vacio";
+                return;
+            }
+            LabelPre.Text = "";
+            miArbol.PreOrden(miRaiz);
+
+            LabelPre.Text = miArbol.strRecorrido;
+
+            miRaiz = miArbol.RegresaRaiz();
+            miArbol.strRecorrido = "";
+
+            if (miRaiz == null)
+            {
+                LabelIn.Text = "El arbol esta vacio";
+                return;
+            }
+            LabelIn.Text = "";
+            miArbol.InOrden(miRaiz);
+            LabelIn.Text = miArbol.strRecorrido;
+
+            miRaiz = miArbol.RegresaRaiz();
+            miArbol.strRecorrido = "";
+
+            if (miRaiz == null)
+            {
+                LabelPost.Text = "El arbol esta vacio";
+                return;
+            }
+            LabelPost.Text = "";
+            miArbol.PostOrden(miRaiz);
+            LabelPost.Text = miArbol.strRecorrido;
+        }
+
+        private void btnRandom_Click_1(object sender, EventArgs e)
+        {
+            miArbol = null;
+            miRaiz = null;
+            miArbol = new ArbolBusqueda();
+            txtArbol.Text = "";
+            txtDato.Text = "";
+            miArbol.strArbol = "";
+
+            Random rnd = new Random();
+
+            for (int nNodos = 1; nNodos <= txtNodos.Value; nNodos++)
+            {
+                int Dato = rnd.Next(1, 100);
+                miRaiz = miArbol.RegresaRaiz();
+
+                if (miArbol.Busqueda(Dato, miRaiz))
+                {
+                    nNodos--;
+                }
+                else
+                {
+                    miArbol.InsertaNodo(Dato, ref miRaiz);
+                }
+            }
+            miArbol.Muestra(1, miRaiz);
+            txtArbol.Text = miArbol.strArbol;
+
             txtDato.Text = "";
         }
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+         
+            if (int.TryParse(txtDato.Text, out int valor))
+            {
+                miArbol.BuscaNodo(valor);
+                txtDato.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Por favor, ingresa un número válido.");
+            }
+        }
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtArbol_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }
