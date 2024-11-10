@@ -18,6 +18,8 @@ namespace EDDemo.Estructuras_No_Lineales
        
         ArbolBusqueda miArbol;
         NodoBinario miRaiz;
+       
+
 
         public frmArboles()
         {
@@ -57,7 +59,7 @@ namespace EDDemo.Estructuras_No_Lineales
             miArbol = null;
             miRaiz = null;
             miArbol = new ArbolBusqueda();
-            txtArbol.Text = "";
+           
             txtDato.Text = "";
             LabelPre.Text = "";
             LabelIn.Text = "";
@@ -198,6 +200,52 @@ namespace EDDemo.Estructuras_No_Lineales
             graf.ActualizaGrafica(bm);
             graf.MdiParent = this.MdiParent;
             graf.Show();
+        }
+
+        private void btnPodar_Click(object sender, EventArgs e)
+        {
+            miArbol.PodaArbol();
+            txtArbol.Text = "";
+           
+            MessageBox.Show("Se podo el arbol");
+        }
+
+        private void btnPredecesor_Click(object sender, EventArgs e)
+        {
+            int valorEliminar = int.Parse(txtDato.Text);
+          
+
+            miArbol.EliminarPredecesor(valorEliminar, ref miRaiz);
+            miRaiz = miArbol.RegresaRaiz();
+            miArbol.strArbol = "";
+            miArbol.Muestra(1, miRaiz);
+            txtArbol.Text = miArbol.strArbol;
+
+        }
+
+        private void btnSucesor_Click(object sender, EventArgs e)
+        {
+            int valorEliminar = int.Parse(txtDato.Text);
+
+
+            miArbol.EliminarSucesor(valorEliminar, ref miRaiz);
+            miRaiz = miArbol.RegresaRaiz();
+            miArbol.strArbol = "";
+            miArbol.Muestra(1, miRaiz);
+            txtArbol.Text = miArbol.strArbol;
+
+        }
+
+        private void btnAltura_Click(object sender, EventArgs e)
+        {
+            if (miRaiz == null)
+            {
+                MessageBox.Show("El arbol esta vacio");
+                return;
+            }
+            int altura = miArbol.Altura(miRaiz);
+            MessageBox.Show("Su altura es de: " + altura);
+
         }
     }
 }
