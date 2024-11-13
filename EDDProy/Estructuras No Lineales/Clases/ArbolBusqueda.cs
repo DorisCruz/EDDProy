@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EDDemo.Estructuras_Lineales.Clases;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -184,7 +185,7 @@ namespace EDDemo.Estructuras_No_Lineales
                 EliminarPredecesor(x, ref nodo.Izq);
             else if (x > nodo.Dato)
                 EliminarPredecesor(x, ref nodo.Der);
-            else 
+            else
             {
                 if (nodo.Izq != null && nodo.Der != null)
                 {
@@ -236,14 +237,14 @@ namespace EDDemo.Estructuras_No_Lineales
             {
                 EliminarSucesor(x, ref nodo.Der);
             }
-            else if (nodo.Izq != null && nodo.Der != null) 
+            else if (nodo.Izq != null && nodo.Der != null)
             {
                 NodoBinario menor = BuscaMenor(nodo.Der);
                 nodo.Dato = menor.Dato;
 
                 EliminarSucesor(menor.Dato, ref nodo.Der);
             }
-            else 
+            else
             {
                 NodoBinario temp = nodo;
                 if (nodo.Izq == null)
@@ -266,16 +267,117 @@ namespace EDDemo.Estructuras_No_Lineales
             }
             return nodo;
         }
+        public void RecorridoPorNivelesPersonalizado(NodoBinario nodo)
+        {
+            if (nodo == null)
+                return;
+
+            Cola cola = new Cola();
+            cola.Queue(nodo);
+
+            strRecorrido = ""; 
+            while (!cola.IsEmpty())
+            {
+                NodoBinario actual = cola.DeQueue();
+                strRecorrido += actual.Dato + " - ";
+
+                if (actual.Izq != null)
+                    cola.Queue(actual.Izq);
+
+                if (actual.Der != null)
+                    cola.Queue(actual.Der);
+            }
+        }
         public int Altura(NodoBinario nodo)
         {
             if (nodo == null)
             {
-                return 0; 
+                return 0;
             }
             int AltIzquierda = Altura(nodo.Izq);
             int AltDerecha = Altura(nodo.Der);
 
             return 1 + Math.Max(AltIzquierda, AltDerecha);
+        }
+        public int ContarHojas(NodoBinario nodo)
+        {
+            if (nodo == null)
+            {
+                return 0;
+            }
+
+            if (nodo.Izq == null && nodo.Der == null)
+            {
+                return 1;
+            }
+
+            return ContarHojas(nodo.Izq) + ContarHojas(nodo.Der);
+        }
+        public int ContarNodos(NodoBinario nodo)
+        {
+            if (nodo == null)
+            {
+                return 0;
+            }
+            return 1 + ContarNodos(nodo.Izq) + ContarNodos(nodo.Der);
+
+        }
+        public bool EsLleno(NodoBinario nodo)
+        {
+            if (nodo == null)
+            {
+                return true;
+            }
+
+            if (nodo.Izq == null && nodo.Der == null)
+            {
+                return true;
+            }
+
+            if (nodo.Izq != null && nodo.Der != null)
+            {
+                return EsLleno(nodo.Izq) && EsLleno(nodo.Der);
+            }
+            return false;
+        }
+        public bool EsArbolCompleto(NodoBinario nodo)
+        {
+            if (nodo == null)
+                return true; 
+
+            Cola colaAuxiliar = new Cola();
+            colaAuxiliar.Queue(nodo);
+
+            bool nodoLleno = false; 
+            while (!colaAuxiliar.IsEmpty())
+            {
+                NodoBinario nodoAuxiliar = colaAuxiliar.DeQueue();
+
+                if (nodoAuxiliar.Izq != null)
+                {
+                    if (nodoLleno)
+                        return false; 
+
+                    colaAuxiliar.Queue(nodoAuxiliar.Izq);
+                }
+                else
+                {
+                    nodoLleno = true; 
+                }
+
+                if (nodoAuxiliar.Der != null)
+                {
+                    if (nodoLleno)
+                        return false;
+
+                    colaAuxiliar.Queue(nodoAuxiliar.Der);
+                }
+                else
+                {
+                    nodoLleno = true;
+                }
+            }
+            return true; 
         }
     }
 }
